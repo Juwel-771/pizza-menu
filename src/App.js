@@ -73,9 +73,18 @@ function Menu (){
   return (
     <main className='menu'>
       <h2>Our Menu</h2>
-      <Pizza/>
-      <Pizza/>
-      <Pizza/>
+      <Pizza 
+        name = "Focaccia" 
+        ingredients = "Bread with italian olive oil and rosemary" 
+        photoName = 'pizza/focaccia.jpg'
+        price = {10}
+      />
+      <Pizza
+        name = "Pizza Funghi"
+        ingredients = "Tomato, Mushrooms"
+        photoName = "pizza/funghi.jpg"
+        price = {20} 
+      />
     </main>
   )
 }
@@ -95,12 +104,20 @@ function Footer (){
   return <footer className='footer'> {new Date().toLocaleTimeString()} We are currently open</footer>
 }
 
-function Pizza(){
-  return <div>
-    <img src='pizza/focaccia.jpg' alt='Pizza Focaccia'/>
-    <h3>Focaccia</h3>
-    <p>Bread with italian olive oil and rosemary</p>
-  </div>
+function Pizza(props){
+
+  console.log(props);
+
+  return (
+    <div className='pizza'>
+      <img src={props.photoName} alt='Pizza Focaccia'/>
+      <div>
+        <h3>{props.name}</h3>
+        <p> {props.ingredients} </p>
+      </div>
+      <span> {props.price}Tk </span>
+    </div>
+  )
 }
 
 export default App;
