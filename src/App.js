@@ -132,18 +132,16 @@ function Footer (){
   )
 }
 
-function Pizza(props){
-
-  console.log(props);
+function Pizza({pizzaObj}){
 
   return (
-    <div className='pizza'>
-      <img src={props.pizzaObj.photoName} alt={props.pizzaObj.photoName}/>
+    <div className={`pizza ${pizzaObj.soldOut ? "sold-out" : " " }`}>
+      <img src={pizzaObj.photoName} alt={pizzaObj.photoName}/>
       <div>
-        <h3>{props.pizzaObj.name}</h3>
-        <p> {props.pizzaObj.ingredients} </p>
+        <h3>{pizzaObj.name}</h3>
+        <p> {pizzaObj.ingredients} </p>
       </div>
-      <span> {props.pizzaObj.price}Tk </span>
+      <span> { pizzaObj.soldOut ? "Sold Out" : pizzaObj.price } </span>
     </div>
   )
 }
