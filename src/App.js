@@ -53,8 +53,6 @@ function App() {
     <div className='container'>
       <Header/>
       <Menu/>
-      <Menu/>
-      <Menu/>
       <Footer />
     </div>
   );
@@ -73,9 +71,12 @@ function Header (){
 
 function Menu (){
   return (
-    <div>
+    <main className='menu'>
+      <h2>Our Menu</h2>
       <Pizza/>
-    </div>
+      <Pizza/>
+      <Pizza/>
+    </main>
   )
 }
 
@@ -91,14 +92,14 @@ function Footer (){
   //   alert("Sorry!! We are close");
   // }
 
-  return <footer> {new Date().toLocaleTimeString()} We are currently open</footer>
+  return <footer className='footer'> {new Date().toLocaleTimeString()} We are currently open</footer>
 }
 
 function Pizza(){
   return <div>
     <img src='pizza/focaccia.jpg' alt='Pizza Focaccia'/>
-    <h2>Focaccia</h2>
-    <h2>Bread with italian olive oil and rosemary</h2>
+    <h3>Focaccia</h3>
+    <p>Bread with italian olive oil and rosemary</p>
   </div>
 }
 
